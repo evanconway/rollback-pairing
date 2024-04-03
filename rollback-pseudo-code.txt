@@ -76,3 +76,45 @@ Start Program:
     goto loop
 
 End Program
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A <-> B
+A's input  A.........
+B's system .B...A....
+B's screen .....AB...
+B's screen .B...A....
+                ^???
+
+{
+    clientId: A,
+    action: attack,
+    frame: 63,
+} // -> 67
+{
+    clientId: B,
+    action: nothing,
+    frame: 65,
+}
+64 -> 65 -> 66 -> 67 -> 68
+
+60 fps -> 16.67 ms per frame
+network ping 30 ms
+  -> network ping is a delay of 2-4 frames
+
+1. B begins attack
+2. 3 frames pass
+3. Data for A's attack comes in
+4. Fast-forward A's attack by the number of delayed frames (5 frames)
+5. Play A's attack offset by the number of delayed frames
