@@ -22,24 +22,14 @@
     <link rel="manifest" href="/manifest.json">
 
     <!-- import the webpage's javascript file -->
-    <script src="src/script.ts" defer></script>
+    <script type="module" src="src/script.ts" defer></script>
 </head>
 <body>
     <div class="container">
-        <h1>Phone a friend</h1>
+        <h1>Slap a friend</h1>
         <p id="caststatus" class="big">
-            Connecting...
+            Connecting boo...
         </p>
-        <section class="call-container" hidden>
-            <div class="audio-container">
-                <p>You're automatically muted, unmute yourself!</p>
-                <audio controls id="remoteAudio" muted="true"></audio>
-                <audio controls id="localAudio" muted="true"></audio>
-            </div>
-            <button class="hangup-btn">
-                Hang up
-            </button>
-        </section>
         <div id="chatbox" style="width: 500px; height: 300px; background-color: red;"></div>
         <form id="chatbox-form">
             <input id="chatbox-textinput" type="text" />
