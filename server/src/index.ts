@@ -17,7 +17,6 @@ const peerServer = ExpressPeerServer(server, {
 
 app.use(peerServer);
 
-
 const staticFileDir = '../../client/dist';
 app.use(express.static(path.join(__dirname, staticFileDir)));
 
@@ -30,4 +29,5 @@ app.get('hello', (req, res) => {
 });
 
 server.listen(port);
-console.log(`Listening on: ${port}`);
+console.log(`app runnin at http://localhost:${port}`);
+
