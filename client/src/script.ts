@@ -1,4 +1,5 @@
 import { Peer, DataConnection } from "peerjs";
+import { amPlayer1, setPlayer, setPlayerMoving } from "./game";
 
 let conn: DataConnection;
 
@@ -25,6 +26,12 @@ document.getElementById('chatbox-form')?.addEventListener('submit', (e) => {
     
     if (conn?.open) {
         conn.send(message);
+
+        if (amPlayer1()) {
+            setPlayerMoving('p1');
+        } else {
+            setPlayerMoving('p2');
+        }
     }
 });
 
@@ -41,6 +48,12 @@ const setupConnection = (conn: DataConnection) => {
         pNode.innerHTML = d;
         pNode.style.backgroundColor = 'yellow';
         document.getElementById('chatbox')?.appendChild(pNode);
+
+        if (amPlayer1()) {
+            setPlayerMoving('p2');
+        } else {
+            setPlayerMoving('p1');
+        }
     });
 };
 
@@ -50,10 +63,14 @@ document.getElementById('call-btn')?.addEventListener("click", () => {
     if (code) {
         conn = peer.connect(code);
         setupConnection(conn);
+
+        setPlayer('p2');
     }
 });
 
 peer.on("connection", (connection) => {
     conn = connection;
     setupConnection(conn);
+
+    setPlayer('p1');
 });
