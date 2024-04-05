@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "peerjs": "peerjs --port 8443 --key peerjs --path /myapp",
     "build": "tsc --watch",
     "dev": "nodemon ./build/index.js",
     "tsc-init": "tsc --init",

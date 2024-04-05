@@ -7,6 +7,7 @@ const peerId = `${Math.floor(Math.random() * 2 ** 18).toString(36).padStart(4, '
 const peer = new Peer(peerId,
     {
       host: location.hostname,
+      port: 8443,
       debug: 1,
       path: "/myapp",
     },
@@ -45,7 +46,7 @@ const setupConnection = (conn: DataConnection) => {
 };
 
 // click event for call button
-document.querySelector(".call-btn")?.addEventListener("click", () => {
+document.getElementById('call-btn')?.addEventListener("click", () => {
     const code = window.prompt("Please enter the sharing code");
     if (code) {
         conn = peer.connect(code);
