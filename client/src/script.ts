@@ -37,7 +37,6 @@ peer.on("open", () => {
 
 const setupConnection = (conn: DataConnection) => {
     conn.on('data', (d: any) => {
-        console.log('data:', d);
         const pNode = document.createElement('p');
         pNode.innerHTML = d;
         pNode.style.backgroundColor = 'yellow';

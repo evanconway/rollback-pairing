@@ -13,8 +13,6 @@ const peerServer = ExpressPeerServer(server, {
   // @ts-ignore
   debug: true,
   path: "/myapp",
-  // @ts-ignore
-  ssl: {},
 });
 
 app.use(peerServer);

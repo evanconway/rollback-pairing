@@ -23,6 +23,7 @@
 
     <!-- import the webpage's javascript file -->
     <script type="module" src="src/script.ts" defer></script>
+    <script type="module" src="src/game.ts" defer></script>
 </head>
 <body>
     <div class="container">
@@ -40,6 +41,8 @@
             <input id="chatbox-textinput" type="text" />
             <button>Submit</button>
         </form>
+
+        <canvas id="gamescreen"></canvas>
     </div>
     <section class="modal" hidden>
         <div id="close">
@@ -52,8 +55,6 @@
                 Connect
             </button>
         </div>
-
     </section>
-
 </body>
 </html>
